@@ -1,0 +1,26 @@
+from decimal import Decimal
+import time
+
+def make_items(n):
+    return ["33.40"] * n + ["0.10"] * 3
+
+for n in [300, 6000, 150000]:
+    items = make_items(n)
+
+    t0 = time.perf_counter()
+    total_float = 0.0
+    for x in items:
+        total_float += float(x)
+    t1 = time.perf_counter()
+
+    total_decimal = Decimal("0")
+    for x in items:
+        total_decimal += Decimal(x)
+    t2 = time.perf_counter()
+
+    print("n =", n)
+    print("float =", total_float)
+    print("Decimal =", total_decimal)
+    print("difference =", abs(total_float - float(total_decimal)))
+    print("float time =", t1 - t0)
+    print("Decimal time =", t2 - t1)
