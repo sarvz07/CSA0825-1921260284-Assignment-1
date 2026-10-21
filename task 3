@@ -1,0 +1,19 @@
+BASE_RATE = 30.00
+FAT_STEP_VALUE = 0.40
+SNF_STEP_VALUE = 0.30
+BASE_FAT = 3.5
+BASE_SNF = 8.5
+MIN_FAT = 2.0
+MAX_FAT = 7.0
+
+a = 10
+b = 20
+a, b = b, a
+
+print(BASE_RATE, FAT_STEP_VALUE, SNF_STEP_VALUE)
+print(BASE_FAT, BASE_SNF, MIN_FAT, MAX_FAT)
+print(a, b)
+
+a = 10
+a = "milk"
+print(a, type(a))
